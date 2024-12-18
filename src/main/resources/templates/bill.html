@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>bill page</title>
+</head>
+<body>
+<div align="center" >
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>discount</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${bill.items}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.discount}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+    <table>
+        <thead>
+        <tr>
+            total
+        </tr>
+        </thead>
+        <tbody><tr th:text="${bill.getTotalAmount()}"></tr></tbody>
+    </table>
+</div>
+</body>
+</html>
